@@ -1,0 +1,9 @@
+<% @products.each do |product| %>
+  <div class="product-card">
+    <% if product.image.attached? %>
+      <%= image_tag product.image, class: "product-image" %>
+    <% end %>
+    <h3><%= product.name %></h3>
+    <p><%= number_to_currency(product.price) %></p>
+  </div>
+<% end %>

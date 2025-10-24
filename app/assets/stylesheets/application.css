@@ -1,0 +1,58 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+.topbar {
+  background: #d8701b;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+  padding: 8px 16px;
+}
+.brand a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-link {
+  color: #c7d2fe;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.08);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+
+   font-size: 16px;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.15);
+}

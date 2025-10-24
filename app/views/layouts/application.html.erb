@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AllShops</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="turbo-cache-control" content="no-cache">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="wrap">
+        <h1 class="brand"><%= link_to "AllShops", root_path %></h1>
+       <nav class="nav">
+  <%= link_to "Products", products_path, class: "nav-link" %>
+
+
+  <% if user_signed_in? %>
+    <span class="nav-muted">Logged in as <strong><%= current_user.name %></strong></span>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-ghost", form: { class: "inline" } %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "btn" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+  <% end %>
+</nav>
+
+      </div>
+    </header>
+
+    <div class="wrap">
+      <% if notice.present? %><div class="alert alert-success"><%= notice %></div><% end %>
+      <% if alert.present?  %><div class="alert alert-danger"><%= alert %></div><% end %>
+
+      <main class="card page">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>
