@@ -5,5 +5,8 @@
     <% end %>
     <h3><%= product.name %></h3>
     <p><%= number_to_currency(product.price) %></p>
+    <p><%= truncate(product.description, length: 100) %></p>
   </div>
 <% end %>
+
+

@@ -1,4 +1,28 @@
-<div>
-  <h1 class="font-bold text-4xl">Products#new</h1>
-  <p>Find me in app/views/products/new.html.erb</p>
-</div>
+<h2>Add New Product</h2>
+
+<%= form_with model: @product, local: true, html: { multipart: true } do |f| %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Product" %>
+  </div>
+<% end %>
+
